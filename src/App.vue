@@ -12,13 +12,20 @@
       <router-link to="/user/foo">/user/foo</router-link>
       <router-link to="/user/bar">/user/bar</router-link>
     </div> -->
-
-    <Welcome />
+    <!-- 进场页 -->
+    <welcome />
     <div class="content">
-      <keep-alive>
-              <router-view></router-view>
-      </keep-alive>
-      <!-- footer -->
+      <header class="app-header">
+        <wx-header></wx-header>
+      </header>
+
+      <section class="app-content">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </section>
+
+      <!-- 导航 路由四个页面 -->
       <footer class="app-footer">
         <wx-nav />
       </footer>
@@ -27,16 +34,17 @@
 </template>
 
 <script>
-import Welcome from "./components/common/Welcome";
+import welcome from "./components/common/welcome";
+import wxHeader from "./components/common/wx-header";
 import wxNav from "./components/common/wx-nav";
 
 import { mapState } from "vuex";
 export default {
   name: "app",
   components: {
-    Welcome,
+    welcome,
+    wxHeader,
     wxNav
-    // child
   },
   computed: mapState({
     // 以下两句话等效

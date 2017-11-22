@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>this is wechat</p>
+    <p>this is explore page</p>
   </div>
 </template>
 
